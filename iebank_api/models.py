@@ -18,7 +18,8 @@ class Account(db.Model):
     def __init__(self, name, currency, country):
         self.name = name
         self.account_number = ''.join(random.choices(string.digits, k=20))
-        self.currency = currency
+        self.currency = currency if currency in ('€', '$') else '€'
         self.balance = 0.0
         self.status = "Active"
         self.country = country
+        self.created_at = datetime.utcnow()
