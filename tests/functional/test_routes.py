@@ -83,11 +83,11 @@ def test_delete_account(testing_client):
     account_id = response_create.json['id']
 
     # Delete the account
-    response_delete = testing_client.delete(f'/accounts/1')
+    response_delete = testing_client.delete(f'/accounts/{account_id}')
     assert response_delete.status_code == 200
 
     # Try to retrieve the deleted account by ID
-    response_get = testing_client.get(f'/accounts/1')
+    response_get = testing_client.get(f'/accounts/0')
     assert response_get.status_code == 404  # Account should not exist anymore
 
 

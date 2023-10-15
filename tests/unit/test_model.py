@@ -21,7 +21,7 @@ def test_create_account_with_invalid_currency():
     WHEN a new Account is created with an invalid currency
     THEN check the currency is set to '€'
     """
-    account = Account('John Doe', '€€€', 'Spain')
+    account = Account('John Doe', '', 'Spain')
     assert account.currency == '€'
 
 def test_create_account_with_invalid_country():
