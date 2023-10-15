@@ -24,3 +24,7 @@ class DevelopmentConfig(Config):
     dbname=os.getenv('DBNAME')
     )
     DEBUG = True
+
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.getenv('DATABASE_URL')
+    DEBUG = False
