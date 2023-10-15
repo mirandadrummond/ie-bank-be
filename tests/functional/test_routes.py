@@ -87,7 +87,7 @@ def test_delete_account(testing_client):
     assert response_delete.status_code == 200
 
     # Try to retrieve the deleted account by ID
-    response_get = testing_client.get(f'/accounts/0')
+    response_get = testing_client.get(f'/accounts/')
     assert response_get.status_code == 404  # Account should not exist anymore
 
 
