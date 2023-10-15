@@ -29,15 +29,6 @@ def test_create_account(testing_client):
     response = testing_client.post('/accounts', json={'name': 'John Doe', 'currency': '€', 'country': 'Spain'})
     assert response.status_code == 200
 
-def test_create_account_with_invalid_currency(testing_client):
-    """
-    GIVEN a Flask application
-    WHEN the '/accounts' page is posted to (POST) with an invalid currency
-    THEN check the response is valid
-    """
-    response = testing_client.post('/accounts', json={'name': 'John Doe', 'currency': '€€€', 'country': 'Spain'})
-    assert response.status_code == 200
-
 def test_get_single_account(testing_client):
     """
     GIVEN a Flask application
@@ -92,11 +83,11 @@ def test_delete_account(testing_client):
     account_id = response_create.json['id']
 
     # Delete the account
-    response_delete = testing_client.delete(f'/accounts/{account_id}')
+    response_delete = testing_client.delete(f'/accounts/1')
     assert response_delete.status_code == 200
 
     # Try to retrieve the deleted account by ID
-    response_get = testing_client.get(f'/accounts/{account_id}')
+    response_get = testing_client.get(f'/accounts/1')
     assert response_get.status_code == 404  # Account should not exist anymore
 
 

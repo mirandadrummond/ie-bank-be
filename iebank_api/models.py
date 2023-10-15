@@ -22,3 +22,4 @@ class Account(db.Model):
         self.balance = 0.0
         self.status = "Active"
         self.country = country
+        self.created_at = datetime.utcnow()
