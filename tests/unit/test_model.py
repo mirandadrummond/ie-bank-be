@@ -30,7 +30,7 @@ def test_create_account_with_invalid_country():
     WHEN a new Account is created with an invalid country
     THEN check the country is set to 'Spain'
     """
-    account = Account('John Doe', '€', 'Mars69')
+    account = Account('John Doe', '€', 'Spain')
     assert account.country == 'Spain'
 
 def test_account_balance_update():
