@@ -1,5 +1,8 @@
 # IE Bank backend
 
+<img width="878" alt="image" src="https://github.com/mirandadrummond/ie-bank-be/assets/117724212/17c9531d-c302-4761-95db-9e959f24066b">
+
+
 - [IE Bank backend](#ie-bank-backend)
   - [Overview](#overview)
   - [Requirements](#requirements)
